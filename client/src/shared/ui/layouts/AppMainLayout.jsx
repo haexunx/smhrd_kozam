@@ -1,4 +1,4 @@
-import Header from "@/shared/ui/header/Header";
+import { Header } from "@/shared/ui/header";
 import { Outlet } from "react-router-dom";
 
 const AppMainLayout = () => {

@@ -1,6 +1,5 @@
 import { createContext, useCallback, useContext, useState } from "react";
-
-import Modal from "@/shared/ui/modal/Modal";
+import { Modal } from "@/shared/ui/modal";
 
 const ModalContext = createContext();
 

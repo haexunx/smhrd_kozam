@@ -2,7 +2,7 @@ import styles from "./SnoreMonitoring.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Components
-import LoadingSpinner from "@/shared/ui/loading-spinner/LoadingSpinner";
+import { LoadingSpinner } from "@/shared/ui/loading-spinner";
 import StatusPill from "@/pages/snore-monitoring/ui/StatusPill";
 import ElapsedTimer from "@/pages/snore-monitoring/ui/ElapsedTimer";
 import StatsBar from "@/pages/snore-monitoring/ui/StatsBar";

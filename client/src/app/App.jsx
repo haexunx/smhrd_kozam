@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from "@/app/router/ProtectedRoute";
-import WebContent from "@/shared/ui/layouts/WebContent";
-import AppWrapper from "@/shared/ui/layouts/AppWrapper";
-import AppMainLayout from "@/shared/ui/layouts/AppMainLayout";
+import { WebContent, AppWrapper, AppMainLayout } from "@/shared/ui/layouts";
 import Login from "@/pages/login/ui/Login";
 import SnoreMonitoring from "@/pages/snore-monitoring/ui/SnoreMonitoring";
 import MyPage from "@/pages/my-page/ui/MyPage";
