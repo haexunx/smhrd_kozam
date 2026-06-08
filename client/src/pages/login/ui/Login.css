@@ -5,7 +5,7 @@
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
-  background-image: url(@/assets/images/loginBack.png);
+  background-image: url(@/shared/assets/images/loginBack.png);
   background-size: cover;
   background-position: center;
   display: flex;

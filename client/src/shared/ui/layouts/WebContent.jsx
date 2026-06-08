@@ -1,7 +1,7 @@
 import "./WebContent.css";
-import mainIcon1 from "@/assets/images/mainIcon1.png";
-import mainIcon2 from "@/assets/images/mainIcon2.png";
-import mainIcon3 from "@/assets/images/mainIcon3.png";
+import mainIcon1 from "@/shared/assets/images/mainIcon1.png";
+import mainIcon2 from "@/shared/assets/images/mainIcon2.png";
+import mainIcon3 from "@/shared/assets/images/mainIcon3.png";
 
 const WebContent = () => {
   return (

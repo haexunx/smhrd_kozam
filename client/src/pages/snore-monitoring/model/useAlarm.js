@@ -1,7 +1,7 @@
 // hooks/useAlarm.js
 import { useRef, useCallback, useEffect } from "react";
 
-import birdsSound from "@/assets/sounds/birdsSinging.mp3";
+import birdsSound from "@/shared/assets/sounds/birdsSinging.mp3";
 
 const ALARM_SOUNDS = {
   bird: birdsSound,

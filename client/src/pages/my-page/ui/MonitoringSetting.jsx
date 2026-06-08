@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./MonitoringSetting.module.css";
 import { Mic, RefreshCcw } from "lucide-react";
-import alarmSettingIcon from "@/assets/images/alarmSettingIcon.png";
-import nonactivePanda from "@/assets/images/nonactivePanda.png";
-import activePanda from "@/assets/images/activePanda.png";
+import alarmSettingIcon from "@/shared/assets/images/alarmSettingIcon.png";
+import nonactivePanda from "@/shared/assets/images/nonactivePanda.png";
+import activePanda from "@/shared/assets/images/activePanda.png";
 import {
   checkMicPermission,
   requestMicPermission,

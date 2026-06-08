@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
-import styles from "@/pages/SnoreMonitoring/SnoreMonitoring.module.css";
-
-import { Waves } from "lucide-react";
-
 import { formatSecondsToTime } from "@/shared/lib/time/format";
+import styles from "@/pages/snore-monitoring/ui/SnoreMonitoring.module.css";
 
 const ElapsedTimer = ({ isRunning }) => {
   const [seconds, setSeconds] = useState(0);

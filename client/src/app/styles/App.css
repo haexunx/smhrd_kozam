@@ -20,7 +20,7 @@
   align-items: center;
   background:
     linear-gradient(rgba(5, 0, 20, 0.5), rgba(5, 0, 20, 0.85)),
-    url("@/assets/images/mainBackground.png");
+    url("@/shared/assets/images/mainBackground.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

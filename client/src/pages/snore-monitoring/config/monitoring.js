@@ -1,7 +1,7 @@
-import idlePanda from "@/assets/images/idlePanda.png";
-import runningPanda from "@/assets/images/startPanda.png";
-import finishingPanda from "@/assets/images/thinkingPanda.png";
-import stoppedPanda from "@/assets/images/happyPanda.png";
+import idlePanda from "@/shared/assets/images/idlePanda.png";
+import runningPanda from "@/shared/assets/images/startPanda.png";
+import finishingPanda from "@/shared/assets/images/thinkingPanda.png";
+import stoppedPanda from "@/shared/assets/images/happyPanda.png";
 import { Moon, Square, Hourglass, Sun } from "lucide-react";
 
 export const MONITORING_STATUS = {

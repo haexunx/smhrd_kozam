@@ -1,4 +1,4 @@
-import styles from "@/pages/SnoreMonitoring/SnoreMonitoring.module.css";
+import styles from "@/pages/snore-monitoring/ui/SnoreMonitoring.module.css";
 
 const StatusPill = ({ text, active }) => {
   const displayText = active ? text.replace("...", "") : text;

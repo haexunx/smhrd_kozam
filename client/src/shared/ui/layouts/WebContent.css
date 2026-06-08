@@ -116,7 +116,7 @@
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  background-image: url(@/assets/images/webPanda.png);
+  background-image: url(@/shared/assets/images/webPanda.png);
   background-size: cover;
 }
 

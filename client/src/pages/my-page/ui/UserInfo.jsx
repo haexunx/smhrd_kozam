@@ -1,4 +1,4 @@
-import sleepingPanda from "@/assets/images/sleepingPanda.png";
+import sleepingPanda from "@/shared/assets/images/sleepingPanda.png";
 import { User, Mail, Phone, Ruler, Weight } from "lucide-react";
 import { getUserById, updateUser } from "@/pages/my-page/api/user";
 import { useEffect, useState } from "react";

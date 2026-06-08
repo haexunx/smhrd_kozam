@@ -8,8 +8,11 @@ import ElapsedTimer from "@/pages/snore-monitoring/ui/ElapsedTimer";
 import StatsBar from "@/pages/snore-monitoring/ui/StatsBar";
 import ActionButtonContent from "@/pages/snore-monitoring/ui/ActionButtonContent";
 
-import { useSnoreMonitoring } from "@/hooks/SnoreMonitoring/useSnoreMonitoring";
-import { MONITORING_STATUS, STATUS_CONFIG } from "@/pages/snore-monitoring/config/monitoring.js";
+import { useSnoreMonitoring } from "@/pages/snore-monitoring/model/useSnoreMonitoring";
+import {
+  MONITORING_STATUS,
+  STATUS_CONFIG,
+} from "@/pages/snore-monitoring/config/monitoring.js";
 
 /**
  * 코골이 모니터링 페이지 컴포넌트

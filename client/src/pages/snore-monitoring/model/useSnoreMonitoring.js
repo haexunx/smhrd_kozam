@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/pages/login/model/useAuth";
 import { useAsync } from "@/shared/api/useAsync";
-import { useAlarm } from "@/hooks/SnoreMonitoring/useAlarm";
+import { useAlarm } from "@/pages/snore-monitoring/model/useAlarm";
 import { useModal } from "@/app/store/ModalContext";
 import {
   checkMicPermission,
@@ -215,12 +215,15 @@ export function useSnoreMonitoring() {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
 
-      const AudioCtx = window.AudioContext || /** @type {any} */ (window).webkitAudioContext;
+      const AudioCtx =
+        window.AudioContext || /** @type {any} */ (window).webkitAudioContext;
       const audioContext = new AudioCtx();
       audioContextRef.current = audioContext;
 
       const sampleRate = audioContext.sampleRate;
-      const samplesNeeded = Math.round(sampleRate * RECORDING_INTERVAL_MS / 1000);
+      const samplesNeeded = Math.round(
+        (sampleRate * RECORDING_INTERVAL_MS) / 1000,
+      );
 
       const processorCode = `
         class PCMProcessor extends AudioWorkletProcessor {
@@ -233,7 +236,7 @@ export function useSnoreMonitoring() {
         registerProcessor('pcm-processor', PCMProcessor);
       `;
       const blobUrl = URL.createObjectURL(
-        new Blob([processorCode], { type: "application/javascript" })
+        new Blob([processorCode], { type: "application/javascript" }),
       );
       await audioContext.audioWorklet.addModule(blobUrl);
       URL.revokeObjectURL(blobUrl);
@@ -257,7 +260,10 @@ export function useSnoreMonitoring() {
         if (total >= samplesNeeded) {
           const merged = new Float32Array(total);
           let off = 0;
-          for (const c of pcmBufferRef.current) { merged.set(c, off); off += c.length; }
+          for (const c of pcmBufferRef.current) {
+            merged.set(c, off);
+            off += c.length;
+          }
           pcmBufferRef.current = [];
 
           await sendAudio(merged.subarray(0, samplesNeeded), sampleRate);

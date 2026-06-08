@@ -1,4 +1,3 @@
-import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from "@/app/router/ProtectedRoute";
 import WebContent from "@/shared/ui/layouts/WebContent";
@@ -8,6 +7,7 @@ import Login from "@/pages/login/ui/Login";
 import SnoreMonitoring from "@/pages/snore-monitoring/ui/SnoreMonitoring";
 import MyPage from "@/pages/my-page/ui/MyPage";
 import SleepingHistory from "@/pages/sleeping-history/ui/SleepingHistory";
+import "@/app/styles/App.css";
 
 function App() {
   return (

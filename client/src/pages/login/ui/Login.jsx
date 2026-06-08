@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/pages/login/model/useAuth";
 import { User, Lock } from "lucide-react";
-import InputField from "@components/InputField/InputField";
-import mainLogo from "@/assets/images/mainLogo.png";
-// import bgVideo from "@/assets/images/loginBack.mp4";
+import InputField from "@/pages/login/ui/input-field/InputField";
+import mainLogo from "@/shared/assets/images/mainLogo.png";
+// import bgVideo from "@/shared/assets/images/loginBack.mp4";
 import "./Login.css";
 
 const Login = () => {

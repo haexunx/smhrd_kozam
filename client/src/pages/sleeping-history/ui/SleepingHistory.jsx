@@ -13,7 +13,7 @@ import { BsMoonStars } from "react-icons/bs";
 // import
 
 import styles from "./SleepingHistory.module.css";
-import sleepingPanda from "@/assets/images/historyPanda.png";
+import sleepingPanda from "@/shared/assets/images/historyPanda.png";
 
 import { getReport, getReportList } from "@/pages/sleeping-history/api/history";
 import { useAsync } from "@/shared/api/useAsync";

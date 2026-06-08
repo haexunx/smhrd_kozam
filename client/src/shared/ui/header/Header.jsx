@@ -1,6 +1,6 @@
 import { BarChart3, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import headerLogo from "@/assets/images/headerLogo.png";
+import headerLogo from "@/shared/assets/images/headerLogo.png";
 import "./Header.css";
 import { useAuth } from "@/pages/login/model/useAuth";
 
