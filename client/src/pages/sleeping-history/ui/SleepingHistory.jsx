@@ -16,8 +16,8 @@ import styles from "./SleepingHistory.module.css";
 import sleepingPanda from "@/shared/assets/images/historyPanda.png";
 
 import { getReport, getReportList } from "@/pages/sleeping-history/api/history";
-import { useAsync } from "@/shared/api/useAsync";
-import { convertMsToTime, formatTime } from "@/shared/lib/time/format";
+import { useAsync } from "@/shared/api";
+import { convertMsToTime, formatTime } from "@/shared/lib/time";
 import ReportSelectModal from "@/pages/sleeping-history/ui/ReportSelectModal";
 import FeedbackDetailModal from "@/pages/sleeping-history/ui/FeedbackDetailModal";
 

@@ -1,14 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/pages/login/model/useAuth";
-import { useAsync } from "@/shared/api/useAsync";
+import { useAsync } from "@/shared/api";
 import { useAlarm } from "@/pages/snore-monitoring/model/useAlarm";
 import { useModal } from "@/app/store/ModalContext";
-import {
-  checkMicPermission,
-  requestMicPermission,
-} from "@/shared/lib/audio/micPermission";
-import { float32ArrayToWav } from "@/shared/lib/audio/audioConverter";
+import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
+import { float32ArrayToWav } from "@/shared/lib/audio";
 import { MONITORING_STATUS } from "@/pages/snore-monitoring/config/monitoring.js";
 import {
   createAlarmLog,

@@ -1,4 +1,4 @@
-export const requestMicPermission = async () => {
+export async function requestMicPermission() {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: true,
@@ -13,9 +13,9 @@ export const requestMicPermission = async () => {
 
     return false;
   }
-};
+}
 
-export const checkMicPermission = async () => {
+export async function checkMicPermission() {
   try {
     const result = await navigator.permissions.query({
       name: "microphone",
@@ -31,4 +31,4 @@ export const checkMicPermission = async () => {
   } catch (error) {
     console.error(error);
   }
-};
+}

@@ -2,22 +2,28 @@
  * Float32Array(raw PCM)를 WAV Blob으로 변환합니다.
  * AudioWorklet에서 캡처한 무압축 PCM을 서버로 전송할 때 사용합니다.
  */
-export const float32ArrayToWav = (samples, sampleRate) => {
+export function float32ArrayToWav(samples, sampleRate) {
   const length = samples.length * 2 + 44;
   const buffer = new ArrayBuffer(length);
   const view = new DataView(buffer);
   let pos = 0;
 
-  const writeUint16 = (v) => { view.setUint16(pos, v, true); pos += 2; };
-  const writeUint32 = (v) => { view.setUint32(pos, v, true); pos += 4; };
+  function writeUint16(v) {
+    view.setUint16(pos, v, true);
+    pos += 2;
+  }
+  function writeUint32(v) {
+    view.setUint32(pos, v, true);
+    pos += 4;
+  }
 
   writeUint32(0x46464952); // "RIFF"
   writeUint32(length - 8);
   writeUint32(0x45564157); // "WAVE"
   writeUint32(0x20746d66); // "fmt "
   writeUint32(16);
-  writeUint16(1);          // PCM
-  writeUint16(1);          // mono
+  writeUint16(1); // PCM
+  writeUint16(1); // mono
   writeUint32(sampleRate);
   writeUint32(sampleRate * 2);
   writeUint16(2);
@@ -32,13 +38,13 @@ export const float32ArrayToWav = (samples, sampleRate) => {
   }
 
   return new Blob([buffer], { type: "audio/wav" });
-};
+}
 
 /**
  * AudioBuffer를 WAV Blob으로 변환하는 유틸리티
  * AI 서버(librosa)가 ffmpeg 없이도 읽을 수 있도록 WAV 형식을 사용합니다.
  */
-export const audioBufferToWav = (buffer) => {
+export function audioBufferToWav(buffer) {
   const numOfChan = buffer.numberOfChannels;
   const length = buffer.length * numOfChan * 2 + 44;
   const buffer_arr = new ArrayBuffer(length);
@@ -49,15 +55,15 @@ export const audioBufferToWav = (buffer) => {
   let offset = 0;
   let pos = 0;
 
-  const setUint16 = (data) => {
+  function setUint16(data) {
     view.setUint16(pos, data, true);
     pos += 2;
-  };
+  }
 
-  const setUint32 = (data) => {
+  function setUint32(data) {
     view.setUint32(pos, data, true);
     pos += 4;
-  };
+  }
 
   // RIFF 헤더 작성
   setUint32(0x46464952); // "RIFF"
@@ -94,27 +100,29 @@ export const audioBufferToWav = (buffer) => {
   }
 
   return new Blob([buffer_arr], { type: "audio/wav" });
-};
+}
 
 /**
  * Blob(webm 등)을 AudioBuffer로 디코딩합니다.
  * AI 모델 사양에 맞춰 16000Hz로 리샘플링을 시도합니다.
  */
-export const decodeAudio = async (blob) => {
+export async function decodeAudio(blob) {
   const arrayBuffer = await blob.arrayBuffer();
   console.log("Decoding blob:", blob.type, "size:", blob.size);
-  
+
   const AudioContext = window.AudioContext || window.webkitAudioContext;
   const audioContext = new AudioContext({ sampleRate: 16000 });
-  
+
   try {
     // decodeAudioData는 비동기적으로 작동하며 실패 시 에러를 던집니다.
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer).catch(err => {
-      console.error("decodeAudioData failed details:", err);
-      throw err;
-    });
+    const audioBuffer = await audioContext
+      .decodeAudioData(arrayBuffer)
+      .catch((err) => {
+        console.error("decodeAudioData failed details:", err);
+        throw err;
+      });
     return audioBuffer;
   } finally {
     await audioContext.close();
   }
-};
+}

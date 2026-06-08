@@ -1,4 +1,4 @@
-import apiClient from "@/shared/api/client";
+import { apiClient } from "@/shared/api";
 
 export const login = async (credentials) => {
   const response = await apiClient.post(`/auth/login`, credentials);

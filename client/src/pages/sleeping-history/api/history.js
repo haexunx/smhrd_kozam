@@ -1,4 +1,4 @@
-import apiClient from "@/shared/api/client";
+import { apiClient } from "@/shared/api";
 
 export const getReportList = async (payload) => {
   const response = await apiClient.get("/history/reports");

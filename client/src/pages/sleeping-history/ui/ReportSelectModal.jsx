@@ -1,6 +1,6 @@
 import { CalendarDays, Check } from "lucide-react";
 import styles from "./ReportSelectModal.module.css";
-import { convertMsToTime, formatTime } from "@/shared/lib/time/format";
+import { convertMsToTime } from "@/shared/lib/time";
 
 const formatDateKorean = (dateString) => {
   if (!dateString) return;

@@ -2,12 +2,8 @@ import { useEffect, useState } from "react";
 import styles from "./MonitoringSetting.module.css";
 import { Mic, RefreshCcw } from "lucide-react";
 import alarmSettingIcon from "@/shared/assets/images/alarmSettingIcon.png";
-import nonactivePanda from "@/shared/assets/images/nonactivePanda.png";
 import activePanda from "@/shared/assets/images/activePanda.png";
-import {
-  checkMicPermission,
-  requestMicPermission,
-} from "@/shared/lib/audio/micPermission";
+import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
 import { useAuth } from "@/pages/login/model/useAuth";
 import { updateUser } from "@/pages/my-page/api/user";
 import { BsSoundwave } from "react-icons/bs";
@@ -126,7 +122,10 @@ const MonitoringSetting = () => {
 
       <section className={styles.settingCard}>
         <h2>
-          알람 발생 조건 <span><GoQuestion /></span>
+          알람 발생 조건{" "}
+          <span>
+            <GoQuestion />
+          </span>
         </h2>
         <p>어떤 상황에서 알람을 받을지 선택하세요.</p>
 
@@ -181,9 +180,7 @@ function Option({ active = false, icon, title, text, onClick }) {
         <small>{text}</small>
       </span>
 
-      <i>
-        {active && <img src={activePanda} alt="" aria-hidden="true" />}
-      </i>
+      <i>{active && <img src={activePanda} alt="" aria-hidden="true" />}</i>
     </button>
   );
 }

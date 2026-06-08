@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { formatSecondsToTime } from "@/shared/lib/time/format";
+import { formatSecondsToTime } from "@/shared/lib/time";
 import styles from "@/pages/snore-monitoring/ui/SnoreMonitoring.module.css";
 
 const ElapsedTimer = ({ isRunning }) => {
