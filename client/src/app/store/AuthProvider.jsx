@@ -1,8 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { login as loginApi } from "@/pages/login";
-import { getUserById } from "@/pages/my-page";
-
-export const AuthContext = createContext(null);
+import { useEffect, useState } from "react";
+import { AuthContext } from "@/shared/lib/auth";
+import { login as loginApi, getUserById } from "@/shared/api";
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -58,10 +56,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-};
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) throw new Error("AuthProvider 내에서만 사용 가능");
-  return context;
 };

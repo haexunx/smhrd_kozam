@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { useAuth } from "@/app/store/AuthContext";
-import { useModal } from "@/app/store/ModalContext";
+import { useAuth } from "@/shared/lib/auth";
+import { useModal } from "@/shared/lib/modal";
 import { useAsync } from "@/shared/api";
 import {
   checkMicPermission,

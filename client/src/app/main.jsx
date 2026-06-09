@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { AuthProvider } from "@/app/store/AuthContext";
-import { ModalProvider } from "@/app/store/ModalContext";
+import { AuthProvider } from "@/app/store/AuthProvider";
+import { ModalProvider } from "@/app/store/ModalProvider";
 import "@/app/styles/index.css";
 import App from "@/app/App.jsx";
 

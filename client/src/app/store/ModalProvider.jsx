@@ -1,7 +1,6 @@
-import { createContext, useCallback, useContext, useState } from "react";
+import { useCallback, useState } from "react";
 import { Modal } from "@/shared/ui/modal";
-
-const ModalContext = createContext();
+import { ModalContext } from "@/shared/lib/modal";
 
 const initialModal = {
   isOpen: false,
@@ -68,6 +67,5 @@ export function ModalProvider({ children }) {
   );
 }
 
-export function useModal() {
-  return useContext(ModalContext);
-}
+export { useModal } from "@/shared/lib/modal";
+

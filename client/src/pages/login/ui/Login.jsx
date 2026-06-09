@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User, Lock } from "lucide-react";
 
-import { useAuth } from "@/app/store/AuthContext";
+import { useAuth } from "@/shared/lib/auth";
 import mainLogo from "@/shared/assets/images/mainLogo.png";
 
 import InputField from "./InputField";

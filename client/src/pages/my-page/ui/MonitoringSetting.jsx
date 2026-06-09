@@ -8,8 +8,8 @@ import { BsSoundwave } from "react-icons/bs";
 import { IoNotificationsOffOutline } from "react-icons/io5";
 import { GoQuestion } from "react-icons/go";
 
-import { useAuth } from "@/app/store/AuthContext";
-import { useModal } from "@/app/store/ModalContext";
+import { useAuth } from "@/shared/lib/auth";
+import { useModal } from "@/app/store/ModalProvider";
 import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
 
 import { updateUser } from "../api";

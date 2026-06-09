@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { User, Mail, Phone, Ruler, Weight } from "lucide-react";
 
-import { useAuth } from "@/app/store/AuthContext";
-import { useModal } from "@/app/store/ModalContext";
+import { useAuth } from "@/shared/lib/auth";
+import { useModal } from "@/shared/lib/modal";
+
 
 import sleepingPanda from "@/shared/assets/images/sleepingPanda.png";
 import { useAsync } from "@/shared/api";
