@@ -88,9 +88,9 @@ npm start
 │   └── routers/        # 코골이 예측 API
 ├── client/             # React Frontend (Vite)
 │   └── src/
-│       ├── api/        # API 통신 모듈
-│       ├── components/ # 공용 UI 컴포넌트
-│       └── pages/      # 주요 화면 (Monitoring, MyPage, History)
+│       ├── app/        # 애플리케이션 초기화, 전역 상태(Provider) 및 스타일 설정
+│       ├── pages/      # 화면 단위 페이지 및 로컬 세그먼트 (Login, MyPage 등)
+│       └── shared/     # 공통 API 클라이언트, 범용 UI 컴포넌트, 유틸리티 라이브러리 (audio, auth, modal 등)
 ├── server/             # Node.js Backend (Express)
 │   └── src/
 │       ├── controllers/# 비즈니스 로직
