@@ -1,11 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import ProtectedRoute from "@/app/router/ProtectedRoute";
+
 import { WebContent, AppWrapper, AppMainLayout } from "@/shared/ui/layouts";
+
 import Login from "@/pages/login/ui/Login";
 import SnoreMonitoring from "@/pages/snore-monitoring";
-import MyPage from "@/pages/my-page/ui/MyPage";
+import MyPage from "@/pages/my-page";
 import SleepingHistory from "@/pages/sleeping-history";
-import "@/app/styles/App.css";
+
+import "./styles/App.css";
 
 function App() {
   return (

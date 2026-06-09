@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
 import styles from "./MonitoringSetting.module.css";
-import { Mic, RefreshCcw } from "lucide-react";
 import alarmSettingIcon from "@/shared/assets/images/alarmSettingIcon.png";
 import activePanda from "@/shared/assets/images/activePanda.png";
-import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
-import { useAuth } from "@/app/store/AuthContext";
-import { updateUser } from "@/pages/my-page/api/user";
+
+import { useEffect, useState } from "react";
+import { Mic, RefreshCcw } from "lucide-react";
 import { BsSoundwave } from "react-icons/bs";
 import { IoNotificationsOffOutline } from "react-icons/io5";
 import { GoQuestion } from "react-icons/go";
+
+import { useAuth } from "@/app/store/AuthContext";
 import { useModal } from "@/app/store/ModalContext";
+import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
+
+import { updateUser } from "../api";
 
 const alarmConditions = [
   {

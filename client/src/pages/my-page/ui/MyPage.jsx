@@ -1,6 +1,8 @@
 import "./MyPage.css";
+
 import { useState } from "react";
-import UserInfo from "@/pages/my-page/ui/UserInfo";
+
+import UserInfo from "./UserInfo";
 import MonitoringSetting from "./MonitoringSetting";
 
 const MyPage = () => {

@@ -1,17 +1,19 @@
-import sleepingPanda from "@/shared/assets/images/sleepingPanda.png";
-import { User, Mail, Phone, Ruler, Weight } from "lucide-react";
-import { getUserById, updateUser } from "@/pages/my-page/api/user";
 import { useEffect, useState } from "react";
-import { useAsync } from "@/shared/api";
+import { useNavigate } from "react-router-dom";
+import { User, Mail, Phone, Ruler, Weight } from "lucide-react";
+
 import { useAuth } from "@/app/store/AuthContext";
 import { useModal } from "@/app/store/ModalContext";
-import { logout } from "@/pages/login/api/auth";
-import { useNavigate } from "react-router-dom";
+
+import sleepingPanda from "@/shared/assets/images/sleepingPanda.png";
+import { useAsync } from "@/shared/api";
+
+import { getUserById, updateUser } from "../api";
 
 const postures = ["정자세", "측면자세", "엎드린자세"];
 
 const UserInfo = () => {
-  const { user: authUser, refreshUser } = useAuth();
+  const { user: authUser, refreshUser, logout } = useAuth();
   const { data: user, execute } = useAsync(getUserById, {
     immediate: false,
   });
