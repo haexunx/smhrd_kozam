@@ -10,16 +10,15 @@ import {
 } from "lucide-react";
 import { BsMoonStars } from "react-icons/bs";
 
-// import
-
 import styles from "./SleepingHistory.module.css";
 import sleepingPanda from "@/shared/assets/images/historyPanda.png";
 
-import { getReport, getReportList } from "@/pages/sleeping-history/api/history";
 import { useAsync } from "@/shared/api";
 import { convertMsToTime, formatTime } from "@/shared/lib/time";
-import ReportSelectModal from "@/pages/sleeping-history/ui/ReportSelectModal";
-import FeedbackDetailModal from "@/pages/sleeping-history/ui/FeedbackDetailModal";
+import { getReport, getReportList } from "@/pages/sleeping-history/api";
+
+import ReportSelectModal from "./ReportSelectModal";
+import FeedbackDetailModal from "./FeedbackDetailModal";
 
 const TIMELINE_LEGEND = [
   { type: "ALARM", label: "알람 발생", class: "white" },
