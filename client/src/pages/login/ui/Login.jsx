@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/app/store/AuthContext";
 import { User, Lock } from "lucide-react";
-import InputField from "@/pages/login/ui/input-field/InputField";
+
+import { useAuth } from "@/app/store/AuthContext";
 import mainLogo from "@/shared/assets/images/mainLogo.png";
-// import bgVideo from "@/shared/assets/images/loginBack.mp4";
+
+import InputField from "./InputField";
 import "./Login.css";
 
 const Login = () => {

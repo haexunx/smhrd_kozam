@@ -11,8 +11,3 @@ export const login = async (credentials) => {
   }
   return response.data;
 };
-
-export const logout = () => {
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("userId"); // 사용자 ID도 삭제 안정성!! 때문에 추가 삽입
-};

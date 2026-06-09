@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { login as loginApi } from "@/pages/login/api/auth";
+import { login as loginApi } from "@/pages/login/api";
 import { getUserById } from "@/pages/my-page/api";
 
 export const AuthContext = createContext(null);
@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem("accessToken");
     localStorage.removeItem("userId");
   };
 
