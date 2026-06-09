@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { login as loginApi } from "@/pages/login/api/auth";
-import { getUserById } from "@/pages/my-page/api/user";
+import { getUserById } from "@/pages/my-page/api";
 
 export const AuthContext = createContext(null);
 
