@@ -15,7 +15,7 @@ import sleepingPanda from "@/shared/assets/images/historyPanda.png";
 
 import { useAsync } from "@/shared/api";
 import { convertMsToTime, formatTime } from "@/shared/lib/time";
-import { getReport, getReportList } from "@/pages/sleeping-history/api";
+import { getReport, getReportList } from "../api";
 
 import ReportSelectModal from "./ReportSelectModal";
 import FeedbackDetailModal from "./FeedbackDetailModal";
