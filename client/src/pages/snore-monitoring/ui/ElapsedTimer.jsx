@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { formatSecondsToTime } from "@/shared/lib/time";
-import styles from "@/pages/snore-monitoring/ui/SnoreMonitoring.module.css";
+import styles from "./SnoreMonitoring.module.css";
 
 const ElapsedTimer = ({ isRunning }) => {
   const [seconds, setSeconds] = useState(0);

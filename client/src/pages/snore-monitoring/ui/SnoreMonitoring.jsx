@@ -1,18 +1,14 @@
 import styles from "./SnoreMonitoring.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Components
 import { LoadingSpinner } from "@/shared/ui/loading-spinner";
-import StatusPill from "@/pages/snore-monitoring/ui/StatusPill";
-import ElapsedTimer from "@/pages/snore-monitoring/ui/ElapsedTimer";
-import StatsBar from "@/pages/snore-monitoring/ui/StatsBar";
-import ActionButtonContent from "@/pages/snore-monitoring/ui/ActionButtonContent";
 
-import { useSnoreMonitoring } from "@/pages/snore-monitoring/model/useSnoreMonitoring";
-import {
-  MONITORING_STATUS,
-  STATUS_CONFIG,
-} from "@/pages/snore-monitoring/config/monitoring.js";
+import StatusPill from "./StatusPill";
+import ElapsedTimer from "./ElapsedTimer";
+import StatsBar from "./StatsBar";
+import ActionButtonContent from "./ActionButtonContent";
+
+import { useSnoreMonitoring, MONITORING_STATUS, STATUS_CONFIG } from "../model";
 
 /**
  * 코골이 모니터링 페이지 컴포넌트

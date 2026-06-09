@@ -1,13 +1,12 @@
 // hooks/useAlarm.js
 import { useRef, useCallback, useEffect } from "react";
-
 import birdsSound from "@/shared/assets/sounds/birdsSinging.mp3";
 
 const ALARM_SOUNDS = {
   bird: birdsSound,
 };
 
-export function useAlarm(soundType = "bird") {
+export const useAlarm = (soundType = "bird") => {
   const audioRef = useRef(null);
   const isPlayingRef = useRef(false);
 
@@ -55,4 +54,4 @@ export function useAlarm(soundType = "bird") {
   const isPlayingAlarm = () => isPlayingRef.current;
 
   return { playAlarm, stopAlarm, isPlayingAlarm };
-}
+};

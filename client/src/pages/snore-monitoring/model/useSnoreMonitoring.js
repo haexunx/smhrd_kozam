@@ -1,27 +1,31 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/pages/login/model/useAuth";
-import { useAsync } from "@/shared/api";
-import { useAlarm } from "@/pages/snore-monitoring/model/useAlarm";
+
+import { useAuth } from "@/app/store/AuthContext";
 import { useModal } from "@/app/store/ModalContext";
-import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
-import { float32ArrayToWav } from "@/shared/lib/audio";
-import { MONITORING_STATUS } from "@/pages/snore-monitoring/config/monitoring.js";
+import { useAsync } from "@/shared/api";
+import {
+  checkMicPermission,
+  requestMicPermission,
+  float32ArrayToWav,
+} from "@/shared/lib/audio";
+
+import { MONITORING_STATUS } from "./monitoringConfig";
+import { useAlarm } from "./useAlarm";
 import {
   createAlarmLog,
   createSnoreEvent,
   createSession,
   updateSession,
   predictSnore,
-} from "@/pages/snore-monitoring/api/monitoring";
+} from "@/pages/snore-monitoring/api";
 
-// --- 상수 정의 ---
 const RECORDING_INTERVAL_MS = 3000;
 const SNORE_GAP_LIMIT_SECONDS = 30;
 const SNORE_MIN_DURATION_SECONDS = 10;
 const ALARM_COOLDOWN_MS = 30 * 60 * 1000; // 30분
 
-export function useSnoreMonitoring() {
+export const useSnoreMonitoring = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { openModal, closeModal } = useModal();
@@ -464,4 +468,4 @@ export function useSnoreMonitoring() {
     handleToggleMonitoring,
     handleToggleCooldown,
   };
-}
+};

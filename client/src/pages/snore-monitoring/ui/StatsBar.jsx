@@ -1,6 +1,6 @@
-import styles from "@/pages/snore-monitoring/ui/SnoreMonitoring.module.css";
+import styles from "./SnoreMonitoring.module.css";
 import { Mic, ShieldCheck } from "lucide-react";
-import { ALARM_CONDITION_TEXT } from "@/pages/snore-monitoring/config/monitoring";
+import { ALARM_CONDITION_TEXT } from "../model";
 
 const StatsBar = ({ snoreCount, alarmCondition }) => {
   return (
