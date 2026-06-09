@@ -66,6 +66,3 @@ export function ModalProvider({ children }) {
     </ModalContext.Provider>
   );
 }
-
-export { useModal } from "@/shared/lib/modal";
-

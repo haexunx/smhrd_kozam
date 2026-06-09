@@ -9,7 +9,7 @@ import { IoNotificationsOffOutline } from "react-icons/io5";
 import { GoQuestion } from "react-icons/go";
 
 import { useAuth } from "@/shared/lib/auth";
-import { useModal } from "@/app/store/ModalProvider";
+import { useModal } from "@/shared/lib/modal";
 import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
 
 import { updateUser } from "../api";
