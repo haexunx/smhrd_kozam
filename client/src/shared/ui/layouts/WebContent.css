@@ -1,0 +1,127 @@
+.web-content-wrapper {
+  width: min(520px, 100%);
+  flex: 1 1 520px;
+  min-width: 0;
+  border: 1px solid;
+  height: 100%;
+  color: transparent;
+  overflow: hidden;
+}
+
+.web-content-inner {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  min-height: 100dvh;
+}
+
+.web-content-badge {                      
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(5, 3, 24, 0.36);
+  color: rgba(245, 245, 245, 0.78);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.web-content-badge span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4be28d;
+  box-shadow: 0 0 10px rgba(215, 227, 52, 0.6);
+}
+
+.web-content-copy {
+  position: fixed;
+  top: 18%;
+  left: 10%;
+}
+
+.web-content-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: whitesmoke;
+}
+
+.web-content-title span {
+  color: #8f3cff;
+}
+
+.web-content-description {
+  margin: 12px 0 0;
+  color: rgba(245, 245, 245, 0.763);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.web-content-features {
+  display: grid;
+  gap: 24px;
+  margin-top: 25px;
+}
+
+.web-content-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  /* border: 1px solid rgba(165, 101, 255, 0.45);
+  border-radius: 50%;
+  background: rgba(132, 48, 214, 0.28);
+  color: #b66cff;
+  font-size: 20px; */
+}
+
+.feature-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.web-content-feature strong {
+  display: block;
+  color: whitesmoke;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.web-content-feature p {
+  margin: 5px 0 0;
+  color: rgba(245, 245, 245, 0.62);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.web-content-image {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(@/shared/assets/images/webPanda.png);
+  background-size: cover;
+}
+
+@media (max-width: 1040px) {
+  .web-content-wrapper {
+    display: none;
+  }
+}
