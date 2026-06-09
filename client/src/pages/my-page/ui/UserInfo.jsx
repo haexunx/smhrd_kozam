@@ -3,7 +3,7 @@ import { User, Mail, Phone, Ruler, Weight } from "lucide-react";
 import { getUserById, updateUser } from "@/pages/my-page/api/user";
 import { useEffect, useState } from "react";
 import { useAsync } from "@/shared/api";
-import { useAuth } from "@/pages/login/model/useAuth";
+import { useAuth } from "@/app/store/AuthContext";
 import { useModal } from "@/app/store/ModalContext";
 import { logout } from "@/pages/login/api/auth";
 import { useNavigate } from "react-router-dom";

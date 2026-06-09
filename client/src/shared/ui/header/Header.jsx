@@ -2,11 +2,9 @@ import { BarChart3, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import headerLogo from "@/shared/assets/images/headerLogo.png";
 import "./Header.css";
-import { useAuth } from "@/pages/login/model/useAuth";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { logout } = useAuth();
 
   return (
     <header className="app-header">

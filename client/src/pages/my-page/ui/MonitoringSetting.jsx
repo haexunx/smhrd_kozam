@@ -4,7 +4,7 @@ import { Mic, RefreshCcw } from "lucide-react";
 import alarmSettingIcon from "@/shared/assets/images/alarmSettingIcon.png";
 import activePanda from "@/shared/assets/images/activePanda.png";
 import { checkMicPermission, requestMicPermission } from "@/shared/lib/audio";
-import { useAuth } from "@/pages/login/model/useAuth";
+import { useAuth } from "@/app/store/AuthContext";
 import { updateUser } from "@/pages/my-page/api/user";
 import { BsSoundwave } from "react-icons/bs";
 import { IoNotificationsOffOutline } from "react-icons/io5";
@@ -33,7 +33,7 @@ const alarmConditions = [
 ];
 
 const MonitoringSetting = () => {
-  const { user, refreshUser } = useAuth();
+  const { user, refreshUser, isLoading } = useAuth();
 
   const [useMic, setUseMic] = useState(false);
   const [alarmOption, setAlarmOption] = useState(null);
@@ -95,8 +95,10 @@ const MonitoringSetting = () => {
   }, []);
 
   useEffect(() => {
-    setAlarmOption(user?.alarmCondition ?? null);
-  }, [user?.alarmCondition]);
+    if (user) setAlarmOption(user.alarmCondition ?? null);
+  }, [user]);
+
+  if (isLoading) return;
 
   return (
     <>

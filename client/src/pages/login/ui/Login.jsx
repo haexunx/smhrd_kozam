@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/pages/login/model/useAuth";
+import { useAuth } from "@/app/store/AuthContext";
 import { User, Lock } from "lucide-react";
 import InputField from "@/pages/login/ui/input-field/InputField";
 import mainLogo from "@/shared/assets/images/mainLogo.png";
