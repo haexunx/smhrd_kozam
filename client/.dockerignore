@@ -6,3 +6,5 @@ dist
 README.md
 Dockerfile
 nginx.conf
+install-docker-ubuntu.sh
+run-public-frontend.sh
