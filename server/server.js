@@ -40,7 +40,11 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`[Server] Express 서버 실행 중 → http://localhost:${PORT}`);
-  startAIServer();
+  if (process.env.RUN_AI_EMBEDDED === "true") {
+    startAIServer();
+  } else {
+    console.log("[AI] 임베디드 AI 서버 시작이 비활성화되었습니다. (RUN_AI_EMBEDDED != true)");
+  }
 });
 
 process.on("SIGINT", () => {

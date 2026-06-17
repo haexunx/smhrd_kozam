@@ -1,7 +1,7 @@
 const axios = require("axios");
 const FormData = require("form-data");
 
-const AI_SERVER_URL = "http://127.0.0.1:5000/predict";
+const AI_SERVER_URL = process.env.AI_SERVER_URL || "http://127.0.0.1:5000/predict";
 
 exports.predictSnore = async (req, res) => {
   try {
