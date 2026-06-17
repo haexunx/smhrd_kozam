@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 3. 의존성 파일 복사 및 설치
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
 # 4. 소스 코드 복사 (server 폴더 내용물)
 COPY . .
