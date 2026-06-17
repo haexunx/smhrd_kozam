@@ -16,11 +16,20 @@ echo "Building new backend Docker image..."
 docker build -t kozam-backend .
 
 # 4. 새 컨테이너 실행 (3000 포트)
-# - 동일 폴더 내의 .env 파일에 적힌 환경 변수들(DB_HOST, JWT_SECRET, LLM_API_KEY 등)을 컨테이너에 자동 주입합니다.
-echo "Running new backend container..."
+# - 호스트 OS(NCP 서버)의 환경 변수 값을 컨테이너에 다이렉트로 주입합니다.
+# - 배포 디렉토리 내에 .env 텍스트 파일이 없어도 안전하게 기동됩니다.
+echo "Running new backend container with host environment variables..."
 docker run -d \
   -p 3000:3000 \
-  --env-file .env \
+  -e DB_HOST \
+  -e DB_PORT \
+  -e DB_USER \
+  -e DB_PASSWORD \
+  -e DB_NAME \
+  -e JWT_SECRET \
+  -e LLM_API_KEY \
+  -e RUN_AI_EMBEDDED \
+  -e AI_SERVER_URL \
   --name kozam-backend-container \
   kozam-backend
 
