@@ -18,7 +18,7 @@ docker build -t kozam-client .
 echo "Running new frontend container..."
 docker run -d \
   -p 80:80 \
-  -e BACKEND_HOST=server \
+  -e BACKEND_HOST=10.0.2.6 \
   -e BACKEND_PORT=3000 \
   --name kozam-client-container \
   kozam-client
